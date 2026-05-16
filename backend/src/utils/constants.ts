@@ -1,3 +1,3 @@
-const ADMIN="ADMIN";
-const BUYER="BUYER"
-const SELLER="SELLER"
+export const ADMIN="ADMIN";
+export const BUYER="BUYER"
+export const SELLER="SELLER"

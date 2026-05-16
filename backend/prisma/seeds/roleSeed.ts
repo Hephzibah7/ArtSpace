@@ -1,17 +1,21 @@
 import prisma from "../prisma.js";
 import { permissions } from "../../src/utils/permissions.js";
-export default async function roleSeed() {
+import { ADMIN, BUYER, SELLER } from "../../src/utils/constants.js";
 
+
+
+
+export default async function roleSeed() {
 
   const buyerRole = await prisma.role.upsert({
     where: {
-      name: "BUYER"
+      name: BUYER
     },
 
     update: {},
 
     create: {
-      name: "BUYER",
+      name: BUYER,
 
       permissions: [
         permissions.READ_ALL_PRODUCT
@@ -21,13 +25,13 @@ export default async function roleSeed() {
 
   const sellerRole = await prisma.role.upsert({
     where: {
-      name: "SELLER"
+      name: SELLER
     },
 
     update: {},
 
     create: {
-      name: "SELLER",
+      name: SELLER,
 
       permissions: [
         permissions.CREATE_PRODUCT,
@@ -41,13 +45,13 @@ export default async function roleSeed() {
 
   const adminRole = await prisma.role.upsert({
     where: {
-      name: "ADMIN"
+      name: ADMIN
     },
 
     update: {},
 
     create: {
-      name: "ADMIN",
+      name: ADMIN,
 
       permissions: [
         permissions.CREATE_PRODUCT,
