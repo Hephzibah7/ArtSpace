@@ -1,0 +1,3 @@
+const ADMIN="ADMIN";
+const BUYER="BUYER"
+const SELLER="SELLER"
