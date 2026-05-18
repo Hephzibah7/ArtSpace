@@ -25,3 +25,30 @@ model Role {
   permissions String[]
   users User[]
 }
+
+model OrderItem {
+
+  id String @id @default(uuid())
+  orderId String
+  order Order @relation(fields: [orderId],references: [id])
+  productId String
+  sellerId String
+  amount Float
+}
+
+model Order {
+  id String @id @default(uuid())
+  buyerId String
+  totalAmount Float
+  status OrderStatus @default(PENDING)
+  orderItems OrderItem[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  FAILED
+  CANCELLED
+}

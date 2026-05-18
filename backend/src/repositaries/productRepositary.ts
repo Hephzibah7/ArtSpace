@@ -57,9 +57,7 @@ async function reserveProduct(id:string, productId:string){
     if(!product) throw new BadRequestError("Product does not Exist");
     if(product.status == SOLD) throw new BadRequestError("Artwork Already Sold");
     if(product.status == RESERVED) {
-        if(product.reservationExpiresAt && product.reservationExpiresAt>new Date()){
             throw new BadRequestError("Artwork Currently Reserved");
-        }
     }
      // Reserve for 10 minutes
     const expiration = new Date(
