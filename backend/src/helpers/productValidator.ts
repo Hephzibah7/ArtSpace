@@ -4,34 +4,42 @@ import { param } from 'express-validator';
 export const createProductValidator = [
   check('title', 'Please enter a Title')
     .not()
+    .isString()
     .isEmpty(),
 
   check('description', 'Please enter a description')
     .not()
+    .isString()
     .isEmpty(),
 
   check('price', 'Product should have a price')
     .not()
+    .isString()
     .isEmpty(),
 
   check('imageURL', 'Image is Required')
     .not()
-    .isEmpty(),
+    .isEmpty()
+    .isString(),
 
     check('category', 'Category is Required')
     .not()
-    .isEmpty(),
+    .isEmpty()
+    .isString(),
 
     check('medium')
-    .optional()
+     .not()
+    .isEmpty()
     .isString(),
 
     check('dimensions')
-    .optional()
-    .isString(),
+     .not()
+     .isString()
+    .isEmpty(),
 
     check('tags')
-    .optional()
+    .not()
+    .isEmpty()
     .isArray().withMessage('Tags must be an array')
     .custom((array) => array.every((item:any) => typeof item === 'string'))
     .withMessage('Each item in the tags array must be a string')

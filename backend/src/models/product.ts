@@ -24,19 +24,23 @@ const productSchema = new mongoose.Schema({
   },
 
   category: {
-    type: String
+    type: String,
+    required: true
   },
 
   medium: {
-    type: String
+    type: String,
+    required: true
   },
 
   dimensions: {
-    type: String
+    type: String,
+    required: true
   },
 
   tags: [{
-    type: String
+    type: String,
+    required: true
   }],
 
   sellerId: {
