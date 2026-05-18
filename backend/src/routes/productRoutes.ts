@@ -4,7 +4,7 @@ import productController from "../controller/productController.js";
 import verifyToken from "../middlewares/verifyToken.js";
 import authorize from "../middlewares/authorize.js";
 import { permissions } from "../utils/permissions.js";
-import { createProductValidator, deleteProductValidator, readSellerProductValidator, readSingleProductValidator, updateProductValidator } from "../helpers/productValidator.js";
+import { createProductValidator, deleteProductValidator, readSellerProductValidator, readSingleProductValidator, reservceProductValidator, updateProductValidator } from "../helpers/productValidator.js";
 import { verify } from "crypto";
 
 const router=express.Router();
@@ -15,6 +15,6 @@ router.get("/",verifyToken,authorize(permissions.READ_ALL_PRODUCT),productContro
 router.get("/seller/sellerId", verifyToken, authorize(permissions.READ_SELLER_PRODUCT),  readSellerProductValidator, validate, productController.getAllSellerProduct);
 router.get("/productId/seller/sellerId", verifyToken, authorize(permissions.READ_SINGLE_PRODUCT), readSingleProductValidator, validate, productController.getSellerProduct);
 router.patch("/", verifyToken, authorize(permissions.UPDATE_PRODUCT), updateProductValidator,validate, productController.updateProduct);
-
+router.patch("/reserve/productId", verifyToken, reservceProductValidator, validate, productController.reserveProduct);
 export default router;
 

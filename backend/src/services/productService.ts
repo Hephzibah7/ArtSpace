@@ -23,13 +23,18 @@ async function updateProduct(data:any, productId:string){
     await productRepositary.updateProduct(data,productId);
     
 }
+
+async function reserveProduct(id:string, productId:string){
+    await productRepositary.reserveProduct(id, productId);
+}
 const productService={
     createProduct:createProduct,
     deleteProduct:deleteProduct,
     getAllProduct:getAllProduct,
     getAllSellerProduct:getAllSellerProduct,
     getSellerProduct:getSellerProduct,
-    updateProduct:updateProduct
+    updateProduct:updateProduct,
+    reserveProduct:reserveProduct
 }
 
 export default productService;

@@ -115,3 +115,16 @@ export const readSellerProductValidator = [
     .withMessage('Invalid Seller Id'),
 
 ];
+
+export const reservceProductValidator = [
+  param('productId')
+    .exists()
+    .withMessage('Seller Id param is required')
+    .bail()
+    .notEmpty()
+    .withMessage('Seller Id cannot be empty')
+    .bail()
+    .isMongoId()
+    .withMessage('Invalid Seller Id'),
+
+];

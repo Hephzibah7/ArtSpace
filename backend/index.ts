@@ -6,10 +6,7 @@ import { connectDB } from "./src/config/db.js";
 import errorHandler from "./src/middlewares/errorHandler.js";
 import userRoutes from "./src/routes/userRoutes.js"
 import productRoutes from "./src/routes/productRoutes.js"
-
-
-
-
+import "./src/cron/reservationCron.js"
 
 dotenv.config();  
 

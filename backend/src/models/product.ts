@@ -48,6 +48,17 @@ const productSchema = new mongoose.Schema({
     required: true
   },
 
+  reservedBy:{
+  type:String,
+  default:null
+},
+
+
+reservationExpiresAt: {
+  type: Date,
+  default: null
+},
+
   status: {
     type: String,
 
@@ -62,7 +73,12 @@ const productSchema = new mongoose.Schema({
 
 }, {
   timestamps: true
-});
+}
+
+
+
+
+);
 
 const Product =  mongoose.model(
   "Product",
