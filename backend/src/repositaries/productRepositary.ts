@@ -16,8 +16,9 @@ async function createProduct(data:any, sellerId:string){
 }
 
 async function deleteProduct(productId:string){
-     const isExist = await Product.findById(productId);
-    if(!isExist) throw new BadRequestError("Product does not Exist");
+     const product = await Product.findById(productId);
+    if(!product) throw new BadRequestError("Product does not Exist");
+    if(product.status==RESERVED || product.status==SOLD) throw new BadRequestError(`Cannot delete product because it is already ${product.status}`);
     await Product.findByIdAndDelete(productId);
 }
 async function getAllProduct(){

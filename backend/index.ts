@@ -4,7 +4,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./src/config/db.js";
 import errorHandler from "./src/middlewares/errorHandler.js";
-// import userRoutes from "./src/routes/user.js"
+import userRoutes from "./src/routes/userRoutes.js"
+import productRoutes from "./src/routes/productRoutes.js"
 
 
 
@@ -30,7 +31,8 @@ app.use(
 
 // connectDB();
 
-// app.use("/api/auth", userRoutes);
+app.use("/api/auth", userRoutes);
+app.use("/api/product", productRoutes);
 
 
 //errorHandler should be registered last

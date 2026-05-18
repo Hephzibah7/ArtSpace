@@ -8,3 +8,5 @@ const router=express.Router();
 router.post("/auth",createUserValidator, validate, userController.createUser );
 router.get("/", getUserValidator, validate, userController.getUser );
 router.delete("/", deleteUserValidator, validate, userController.deleteUser);
+
+export default router;

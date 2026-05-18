@@ -9,11 +9,12 @@ import { verify } from "crypto";
 
 const router=express.Router();
 
-router.post("/product", verifyToken, authorize(permissions.CREATE_PRODUCT), createProductValidator, validate, productController.createProduct);
-router.delete("/product", verifyToken, authorize(permissions.DELETE_PRODUCT), deleteProductValidator, validate, productController.deleteProduct);
-router.get("/product",verifyToken,authorize(permissions.READ_ALL_PRODUCT),productController.getAllProduct);
-router.get("/product/seller/sellerId", verifyToken, authorize(permissions.READ_SELLER_PRODUCT),  readSellerProductValidator, validate, productController.getAllSellerProduct);
-router.get("/product/productId/seller/sellerId", verifyToken, authorize(permissions.READ_SINGLE_PRODUCT), readSingleProductValidator, validate, productController.getSellerProduct);
-router.patch("/product", verifyToken, authorize(permissions.UPDATE_PRODUCT), updateProductValidator,validate, productController.updateProduct);
+router.post("/", verifyToken, authorize(permissions.CREATE_PRODUCT), createProductValidator, validate, productController.createProduct);
+router.delete("/", verifyToken, authorize(permissions.DELETE_PRODUCT), deleteProductValidator, validate, productController.deleteProduct);
+router.get("/",verifyToken,authorize(permissions.READ_ALL_PRODUCT),productController.getAllProduct);
+router.get("/seller/sellerId", verifyToken, authorize(permissions.READ_SELLER_PRODUCT),  readSellerProductValidator, validate, productController.getAllSellerProduct);
+router.get("/productId/seller/sellerId", verifyToken, authorize(permissions.READ_SINGLE_PRODUCT), readSingleProductValidator, validate, productController.getSellerProduct);
+router.patch("/", verifyToken, authorize(permissions.UPDATE_PRODUCT), updateProductValidator,validate, productController.updateProduct);
 
+export default router;
 
