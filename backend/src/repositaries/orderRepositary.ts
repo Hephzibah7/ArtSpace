@@ -80,8 +80,47 @@ async function createOrder(productIds:string[], userId:string){
 }
 }
 
+async function getBuyerOrders(userId:string){
+    const orders= await prisma.order.findMany({
+        where:{
+            buyerId:userId
+        },
+        include:{
+            orderItems:true
+        },
+        orderBy:{
+            createdAt:"desc"
+        }
+    })
+    return orders;
+}
+
+async function getSingleOrder(orderId:string){
+    const order=await prisma.order.findUnique({
+        where:{
+            id:orderId
+        },
+        include:{
+            orderItems:true
+        }
+    })
+    return order;
+}
+
+async function getSellerOrders(sellerId:string){
+    const orders=await prisma.orderItem.findMany({
+        where:{
+            sellerId:sellerId
+        }
+    })
+    return orders;
+}
+
 const orderRepositary={
    createOrder:createOrder, 
+   getBuyerOrders:getBuyerOrders,
+   getSingleOrder:getSingleOrder,
+   getSellerOrders:getSellerOrders
 }
 
 export default orderRepositary;
