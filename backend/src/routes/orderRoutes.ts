@@ -12,5 +12,5 @@ const router=express.Router();
 router.post("/", verifyToken, orderController.createOrder);
 router.get("/", verifyToken,authorize(permissions.READ_BUYER_ALL_ORDER), orderController.getBuyerOrders);
 router.get("/seller", verifyToken,authorize(permissions.READ_SELLER_ALL_ORDER),orderController.getSellerOrders);
-router.get("/product/productId", verifyToken, authorize(permissions.READ_SINGLE_ORDER),orderController.getSingleOrder)
+router.get("/product/productId", verifyToken, authorize(permissions.READ_SINGLE_ORDER), getSingleOrderValidator, validate,orderController.getSingleOrder)
 export default router;

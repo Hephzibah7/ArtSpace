@@ -7,6 +7,7 @@ import errorHandler from "./src/middlewares/errorHandler.js";
 import userRoutes from "./src/routes/userRoutes.js"
 import productRoutes from "./src/routes/productRoutes.js"
 import "./src/cron/reservationCron.js"
+import orderRoutes from "./src/routes/orderRoutes.js"
 
 dotenv.config();  
 
@@ -30,6 +31,7 @@ app.use(
 
 app.use("/api/auth", userRoutes);
 app.use("/api/product", productRoutes);
+app.use("api/order", orderRoutes);
 
 
 //errorHandler should be registered last
