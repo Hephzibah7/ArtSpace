@@ -5,7 +5,6 @@ import verifyToken from "../middlewares/verifyToken.js";
 import authorize from "../middlewares/authorize.js";
 import { permissions } from "../utils/permissions.js";
 import { createProductValidator, deleteProductValidator, readSellerProductValidator, readSingleProductValidator, reservceProductValidator, updateProductValidator } from "../helpers/productValidator.js";
-import { verify } from "crypto";
 
 const router=express.Router();
 

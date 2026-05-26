@@ -9,7 +9,7 @@ async function createOrder(req:Request, res:Response, next:NextFunction){
         const { productIds } = req.body;
         const createdOrder=await orderRepositary.createOrder(productIds,userId);
         res.status(200).json({
-        order:createOrder,
+        order:createdOrder,
         success:true,
         message:"Record fetched successfully!"
        })
