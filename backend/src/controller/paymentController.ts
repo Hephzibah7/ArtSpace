@@ -14,9 +14,29 @@ async function createPayment(req:Request, res:Response, next:NextFunction){
         next(error);
     }
 }
+async function paymentSuccess(req:Request, res:Response, next:NextFunction){
+    try{
+        const paymentId=req.params.id as string;
+        await paymentService.paymentSuccess(paymentId);
+    }
+    catch(error){
+        next(error);
+    }
+}
+async function paymentFailure(req:Request, res:Response, next:NextFunction){
+    try{
+        const paymentId=req.params.id as string;
+        await paymentService.paymentFailure(paymentId);
+    }
+    catch(error){
+        next(error);
+    }
+}
 
 const paymentController={
-    createPayment:createPayment
+    createPayment:createPayment,
+    paymentSuccess:paymentSuccess,
+    paymentFailure,
 }
 
 export default paymentController;
