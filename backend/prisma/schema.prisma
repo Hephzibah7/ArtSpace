@@ -41,6 +41,7 @@ model Order {
   buyerId String
   totalAmount Float
   status OrderStatus @default(PENDING)
+   payment Payment?
   orderItems OrderItem[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -51,4 +52,29 @@ enum OrderStatus {
   PAID
   FAILED
   CANCELLED
+}
+
+model Payment {
+
+  id String @id @default(uuid())
+
+  orderId String @unique
+  order Order @relation(fields: [orderId],references: [id])
+
+  amount Float
+
+  status PaymentStatus @default(PENDING)
+
+  provider String?
+
+  transactionId String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+ 
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
 }
