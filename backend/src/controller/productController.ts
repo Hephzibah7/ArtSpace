@@ -91,6 +91,16 @@ async function reserveProduct(req:Request, res:Response, next:NextFunction){
     await productService.reserveProduct(id as string, productId);
 }
 
+async function markProductSold(req:Request, res:Response, next:NextFunction){
+    const productId=req.params.productId as string;
+    await productService.markProductSold(productId);
+}
+async function markProductRelease(req:Request, res:Response, next:NextFunction){
+    const productId=req.params.productId as string;
+    await productService.markProductRelease(productId);
+}
+
+
 
 
 const productController={
@@ -100,7 +110,9 @@ const productController={
     getAllSellerProduct:getAllSellerProduct,
     getSellerProduct:getSellerProduct,
     updateProduct:updateProduct,
-    reserveProduct:reserveProduct
+    reserveProduct:reserveProduct,
+    markProductSold,
+    markProductRelease
 }
 
 export default productController;

@@ -27,6 +27,12 @@ async function updateProduct(data:any, productId:string){
 async function reserveProduct(id:string, productId:string){
     await productRepositary.reserveProduct(id, productId);
 }
+async function markProductSold(productId:string){
+    await productRepositary.markProductSold(productId);
+}
+async function markProductRelease(productId:string){
+    await productRepositary.markProductRelease(productId);
+}
 const productService={
     createProduct:createProduct,
     deleteProduct:deleteProduct,
@@ -34,7 +40,9 @@ const productService={
     getAllSellerProduct:getAllSellerProduct,
     getSellerProduct:getSellerProduct,
     updateProduct:updateProduct,
-    reserveProduct:reserveProduct
+    reserveProduct:reserveProduct,
+    markProductSold,
+    markProductRelease
 }
 
 export default productService;

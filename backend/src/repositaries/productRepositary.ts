@@ -1,7 +1,7 @@
 import Product from "../models/product.js";
 import { BadRequestError } from "../errors/AppError.js";
 import prisma from "../../prisma/prisma.js";
-import { RESERVED, SOLD } from "../utils/constants.js";
+import { AVAILABLE, RESERVED, SOLD } from "../utils/constants.js";
 
 async function createProduct(data:any, sellerId:string){
     const isExist = await prisma.user.findUnique({
@@ -70,6 +70,22 @@ async function reserveProduct(id:string, productId:string){
 
 }
 
+async function markProductSold(productId:string){
+     const product = await Product.findById(productId);
+    if(!product) throw new BadRequestError("Product does not Exist");
+    if(product.status == SOLD) throw new BadRequestError("Artwork Already Sold");
+    product.status=SOLD;
+    product.save();
+}
+
+async function markProductRelease(productId:string){
+    const product = await Product.findById(productId);
+    if(!product) throw new BadRequestError("Product does not Exist");
+    if(product.status == SOLD) throw new BadRequestError("Artwork Already Sold");
+    product.status=AVAILABLE;
+    product.save();
+}
+
 
 
 const productRepositary={
@@ -79,7 +95,9 @@ const productRepositary={
     getSellerProduct:getSellerProduct,
     getAllSellerProduct:getAllSellerProduct,
     updateProduct:updateProduct,
-    reserveProduct:reserveProduct
+    reserveProduct:reserveProduct,
+    markProductSold:markProductSold,
+    markProductRelease
 }
 
 export default productRepositary;
