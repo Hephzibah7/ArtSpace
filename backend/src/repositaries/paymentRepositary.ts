@@ -13,7 +13,15 @@ async function createPayment(orderId:string){
     const payment= await prisma.payment.findUnique({
         where:{
             orderId
+        },
+
+      include: {
+        order: {
+          include: {
+            orderItems: true
+          }
         }
+      }
     })
 
     if(payment) throw new BadRequestError("Payment already exists");
@@ -69,6 +77,8 @@ async function paymentSuccess(paymentId:string){
       });
     }
   );
+
+
 
     
 }
