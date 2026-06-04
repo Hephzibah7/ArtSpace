@@ -15,7 +15,7 @@ export const createPaymentValidator = [
 ];
 
 export const paymentSuccessValidator = [
-  param('paymentId')
+  param('id')
     .exists()
     .withMessage('Payment Id param is required')
     .bail()
@@ -29,7 +29,7 @@ export const paymentSuccessValidator = [
 
 
 export const paymentFailureValidator = [
-  param('paymentId')
+  param('id')
     .exists()
     .withMessage('Payment Id param is required')
     .bail()
