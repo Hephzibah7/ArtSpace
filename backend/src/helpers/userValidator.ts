@@ -27,9 +27,7 @@ export const deleteUserValidator = [
     .bail()
     .notEmpty()
     .withMessage('User Id cannot be empty')
-    .bail()
-    .isMongoId()
-    .withMessage('Invalid User Id'),
+    
 ];
 
 export const addBuyerRoleValidator = [
@@ -39,9 +37,7 @@ export const addBuyerRoleValidator = [
     .bail()
     .notEmpty()
     .withMessage('User Id cannot be empty')
-    .bail()
-    .isMongoId()
-    .withMessage('Invalid User Id'),
+    
 ]
 
 
@@ -52,9 +48,21 @@ export const getUserValidator = [
     .bail()
     .notEmpty()
     .withMessage('User Id cannot be empty')
-    .bail()
-    .isMongoId()
-    .withMessage('Invalid User Id'),
+    
+    
 ]
+
+export const loginUserValidator = [
+  check('email', 'Please Enter a valid E-mail Address')
+    .isEmail()
+    .normalizeEmail({
+      gmail_remove_dots: true
+    }),
+
+  check('password', 'Password is Required.')
+    .not()
+    .isEmpty(),
+
+];
 
 

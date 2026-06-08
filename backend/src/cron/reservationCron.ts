@@ -38,6 +38,6 @@ cron.schedule("* * * * *", async () => {
     );
 
   } catch (error) {
-     throw new BadRequestError("Reservation Cron Failed");
+     throw new BadRequestError("Reservation Cron Failed", error);
   }
 });

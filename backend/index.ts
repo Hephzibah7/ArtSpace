@@ -27,11 +27,11 @@ app.use(
 
 // ✅ Connect to MongoDB
 
-// connectDB();
+connectDB();
 
 app.use("/api/auth", userRoutes);
 app.use("/api/product", productRoutes);
-app.use("api/order", orderRoutes);
+app.use("/api/order", orderRoutes);
 
 
 //errorHandler should be registered last
