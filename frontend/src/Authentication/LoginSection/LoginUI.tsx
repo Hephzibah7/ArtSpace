@@ -3,9 +3,9 @@ import React from 'react'
 function LoginUI() {
   return (
     <div className='w-full h-screen'>
-      <div className='grid grid-cols-3 '>
-        <div className=' h-screen col-span-1 flex justify-center'>
-            <div className='mt-10 p-20 text-center'>
+      <div className='lg:grid lg:grid-cols-3 '>
+        <div className='min-w-[200px] h-screen lg:col-span-1 flex justify-center'>
+            <div className='mt-10 p-10 lg:p-20 text-center'>
                 <h1 className='uppercase text-4xl font-bold'>welcome back</h1>
                 <h3 className='text-wrap text-center text-sm  text-gray-500 mt-5'>Enter your email and password to access your account</h3>
                 <div className='mt-10 flex flex-col gap-4'>
@@ -22,7 +22,7 @@ function LoginUI() {
                 <div className='mt-2 text-gray-500'>Don't have an Account? <span className='text-yellow-600 font-bold'>Register Now</span></div>
             </div>
         </div>
-        <div className='flex justify-center h-screen bg-red-100 col-span-2'>
+        <div className='hidden md:flex justify-center h-screen bg-red-100 col-span-2'>
             <img src="src/assets/pic1.jpeg"/>
         </div>
       </div>
