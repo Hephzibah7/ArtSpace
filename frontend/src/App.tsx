@@ -4,14 +4,13 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import LoginUI from './Authentication/LoginSection/LoginUI'
-import HomeComponent from './landingPage/Home/HomeComponent'
-
+import LandingPageComponent from './landingPage/LandingPageComponent'
 function App() {
 
   return (
     <>
-      <div>
-        <HomeComponent/>
+      <div className='bg-yellow-200'>
+       <LandingPageComponent/>
       </div>
     </>
   )
