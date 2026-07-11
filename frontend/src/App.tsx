@@ -6,6 +6,7 @@ import './App.css'
 import LoginUI from './Authentication/LoginSection/LoginUI'
 import LandingPageComponent from './landingPage/LandingPageComponent'
 import NavBarComponent from './NavBar/NavBarComponent'
+import FooterComponent from './Footer/FooterComponent'
 function App() {
 
   return (
@@ -13,6 +14,7 @@ function App() {
       <div className='bg-yellow-200'>
         <NavBarComponent/>
        <LandingPageComponent/>
+       <FooterComponent/>
       </div>
     </>
   )
