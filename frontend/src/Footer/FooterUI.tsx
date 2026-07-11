@@ -42,7 +42,8 @@ function FooterUI() {
         </div>
         <div>
             <h1 className="uppercase font-bold tracking-tighter text-2xl md:text-6xl lg:text-8xl text-pink-600 ">Artspace</h1>
-            <h1 className="text-sm font-bold mt-1 text-right">All rights reserved</h1>
+            <h1 className="text-sm font-bold mt-1 text-right ">All rights reserved</h1>
+            <h1 className="text-right">English</h1>
         </div>
       </div>
     </div>
