@@ -40,7 +40,7 @@ function NavBarUI({ navCheck, setNavCheck }: NavBarUIProps) {
                 </div>
                 <div>
                     <div className="absolute top-5 bg-pink-600 p-2 rounded"><img className=" w-4" src="magnifying-glass.png" /> </div>
-                    <div><input className="lg:w-[200px] xl:w-[400px] rounded p-1 mt-2" /></div>
+                    <div><input className="lg:w-[200px] xl:w-[400px] rounded p-1 mt-2 placeholder:absolute placeholder:left-10" placeholder="Nature" /></div>
                 </div>
                 <div className="flex gap-5">
                     <div><img className="w-10 cursor-pointer " src="off-button.png" /></div>
