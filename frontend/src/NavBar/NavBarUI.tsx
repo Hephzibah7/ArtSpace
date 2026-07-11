@@ -12,7 +12,7 @@ function NavBarUI({ navCheck, setNavCheck }: NavBarUIProps) {
                 (
                     <div className="lg:hidden w-full h-screen p-5 bg-black absolute z-10 text-white">
                         <div className="flex justify-between">
-                            <div className="uppercase text-xl font-bold tracking-tighter"><span className="text-pink-600">A</span>rtspace</div>
+                            <div className="uppercase text-3xl font-bold tracking-tighter"><span className="text-pink-600">A</span>rtspace</div>
                             <div className="flex gap-2">
                                 <div><img className="w-7 cursor-pointer " src="off-button.png" /></div>
                                 <div onClick={()=>setNavCheck(false)}><img  className="w-5 cursor-pointer" src="remove.png"/></div>
