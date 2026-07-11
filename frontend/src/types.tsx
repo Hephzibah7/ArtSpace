@@ -11,3 +11,8 @@ export interface ArtistUIProps{
     setSelectId:React.Dispatch<React.SetStateAction<number>>
 
 }
+
+export interface NavBarUIProps{
+    navCheck:boolean,
+    setNavCheck:React.Dispatch<React.SetStateAction<boolean>>
+}
