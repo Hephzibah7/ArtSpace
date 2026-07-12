@@ -1,10 +1,16 @@
 
+import { motion } from "framer-motion";
 function HomeUI() {
   return (
     <div className="w-full h-contain  p-10">
-      <div className="text-[15vw] md:text-8xl lg:text-9xl font-extrabold tracking-tighter uppercase flex justify-center">
+      <motion.div
+       initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+       className="text-[15vw] md:text-8xl lg:text-9xl font-extrabold tracking-tighter uppercase flex justify-center">
         season drop 2026
-      </div>
+      </motion.div>
       <div className="mt-10 flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-10">
         <div className="flex flex-col gap-5">
           <div className="flex justify-between">
