@@ -7,13 +7,15 @@ import LoginUI from './Authentication/LoginSection/LoginUI'
 import LandingPageComponent from './landingPage/LandingPageComponent'
 import NavBarComponent from './NavBar/NavBarComponent'
 import FooterComponent from './Footer/FooterComponent'
+import ProductComponent from './productPage/ProductComponent'
 function App() {
 
   return (
     <>
       <div className='bg-yellow-200'>
         <NavBarComponent/>
-       <LandingPageComponent/>
+       {/* <LandingPageComponent/> */}
+       <ProductComponent/>
        <FooterComponent/>
       </div>
     </>

@@ -3,7 +3,7 @@ import ProductDetailComponent from './Product/ProductDetailComponent';
 
 function ProductUI() {
   return (
-    <div>
+    <div className='w-full h-contain flex flex-col gap-[100] p-10'>
       <ProductDetailComponent/>
     </div>
   )

@@ -23,6 +23,10 @@ export interface ArtistUIProps{
     setSelectId:React.Dispatch<React.SetStateAction<number>>
 
 }
+export interface ProductDetailUIProps{
+    selected:string,
+    setSelected:React.Dispatch<React.SetStateAction<string>>
+}
 
 export interface NavBarUIProps{
     navCheck:boolean,
