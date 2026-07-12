@@ -2,7 +2,7 @@
 function HomeUI() {
   return (
     <div className="w-full h-contain  p-10">
-      <div className="text-[15vw] md:text-8xl lg:text-9xl font-bold tracking-tighter uppercase flex justify-center">
+      <div className="text-[15vw] md:text-8xl lg:text-9xl font-extrabold tracking-tighter uppercase flex justify-center">
         season drop 2026
       </div>
       <div className="mt-10 flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-10">

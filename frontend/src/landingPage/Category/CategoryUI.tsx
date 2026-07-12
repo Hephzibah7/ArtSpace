@@ -8,7 +8,7 @@ function CategoryUI() {
             <div className="mt-2 uppercase">hello</div>
             <div className="text-xs">descirption</div>
             </div>
-            <div className="order-1 md:order-2 mb-10 md:mb-0"><h1 className="uppercase tracking-tighter font-extrabold text-7xl md:text-right">new <br></br>arrivals</h1>
+            <div className="order-1 md:order-2 mb-10 md:mb-0"><h1 className="uppercase tracking-tighter font-extrabold text-7xl md:text-right ">new <br></br>arrivals</h1>
             </div>
         </div>
         <div className="cursor-pointer md:row-start-2 md:col-start-2">

@@ -1,8 +1,9 @@
+import { CATEGORY, MEDIUM } from "../constants/Constants"
 
 
 function FooterUI() {
   return (
-    <div className="bg-black p-5 md:p-10 lg:p-20 h-contain w-full text-white text-sm">
+    <div className="bg-black p-5 md:p-10 lg:p-20 h-contain w-full text-white text-sm mt-10 md:mt-0">
       <div className="flex justify-between">
         <div className="flex flex-col gap-2">
             <div>
@@ -21,23 +22,23 @@ function FooterUI() {
         <div className="hidden md:flex gap-10">
             <div className="flex flex-col ">
             <h1 className="font-bold uppercase">categories</h1>
-            <h1>Portrait</h1>
-            <h1>Landscape</h1>
-            <h1>Pet Portrait</h1>
-            <h1>wedding illustrations</h1>
-            <h1>office artwork</h1>
-            <h1>custom canvas</h1>
-            <h1>digital illustrations</h1>
+            <h1>{CATEGORY.PORTRAIT}</h1>
+            <h1>{CATEGORY.LANDSCAPE}</h1>
+            <h1>{CATEGORY.PET_PORTRAIT}</h1>
+            <h1>{CATEGORY.WEDDING_ILLUSTRATIONS}</h1>
+            <h1>{CATEGORY.CUSTOM_CANVAS}</h1>
+            <h1>{CATEGORY.OFFICE_ARTWORK}</h1>
+            <h1>{CATEGORY.DIGITAL_ILLUSTRATIONS}</h1>
             </div>
             <div className="flex flex-col ">
             <h1 className="font-bold uppercase">mediums</h1>
-            <h1>Oil</h1>
-            <h1>Acyclic</h1>
-            <h1>Watercolor</h1>
-            <h1>Pencil Sketch</h1>
-            <h1>Charcoal</h1>
-            <h1>Digital Art</h1>
-            <h1>Mixed Media</h1>
+            <h1>{MEDIUM.OIL}</h1>
+            <h1>{MEDIUM.ARCYCLIC}</h1>
+            <h1>{MEDIUM.WATERCOLOR}</h1>
+            <h1>{MEDIUM.PENCIL_SKETCH}</h1>
+            <h1>{MEDIUM.CHARCOAL}</h1>
+            <h1>{MEDIUM.DIGITAL_ART}</h1>
+            <h1>{MEDIUM.MIXED_MEDIA}</h1>
             </div>
         </div>
         <div>

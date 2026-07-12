@@ -1,12 +1,24 @@
 export interface Artist{
+    rank:string
     id:number,
     name:string,
     items:number,
-    rate:number
+    rate:number,
+    
+}
+
+export interface RankedArtist{
+    rank:string
+    id:number,
+    name:string,
+    items:number,
+    rate:number,
+    order:number,
+    medal:string
 }
 
 export interface ArtistUIProps{
-    artists:Artist[],
+    artists:RankedArtist[],
     selectId:number,
     setSelectId:React.Dispatch<React.SetStateAction<number>>
 
