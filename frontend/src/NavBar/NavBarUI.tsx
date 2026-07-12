@@ -30,7 +30,7 @@ function NavBarUI({ navCheck, setNavCheck }: NavBarUIProps) {
                     </div>
                 )}
 
-            <div className="hidden lg:flex mb-10 bg-black w-full h-contain p-3 text-white flex justify-between ">
+            <div className="hidden lg:flex bg-black w-full h-contain p-3 text-white flex justify-between ">
                 <div className="uppercase font-bold tracking-tighter text-3xl"><span className="text-pink-600">A</span>rtSpace</div>
                 <div className="flex gap-5 font-bold ">
                     <div className="border border-pink-600 p-2 pl-4 pr-4 rounded cursor-pointer">Home</div>
