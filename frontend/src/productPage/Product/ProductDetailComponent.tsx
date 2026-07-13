@@ -2,7 +2,7 @@ import {useState} from 'react'
 import ProductDetailUI from './ProductDetailUI'
 
 function ProductDetailComponent() {
-  const [selected, setSelected]=useState("");
+  const [selected, setSelected]=useState("description");
   return (
     <div>
       <ProductDetailUI

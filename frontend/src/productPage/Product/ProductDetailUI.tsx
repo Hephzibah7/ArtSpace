@@ -4,12 +4,12 @@ import type { ProductDetailUIProps } from '../../types';
 function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
   return (
     <div className='w-full h-contain'>
-      <div className='grid grid-cols-2'>
+      <div className='md:grid md:grid-cols-2'>
         <div>
-          <img className="object-cover w-[700px] h-[600px]" src="pic1.jpg" />
-          <div className='grid grid-cols-2 mt-5 '>
-            <img className="object-cover w-[350px] h-[400px]" src="pic1.jpg" />
-            <img className="object-cover w-[350px] h-[400px]" src="pic1.jpg" />
+          <img className="object-cover md:w-[700px] md:h-[600px]" src="pic1.jpg" />
+          <div className='md:grid md:grid-cols-2 mt-5 '>
+            <img className="object-cover md:w-[350px] md:h-[400px]" src="pic1.jpg" />
+            <img className="object-cover md:w-[350px] md:h-[400px]" src="pic1.jpg" />
           </div>
         </div>
         <div className='p-5'>
@@ -95,7 +95,7 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
               </div>
             </div>
 
-            <div className='mt-10'>
+            <div className='mt-5'>
               <h1 className='text-2xl font-bold'>Select Your Quantity</h1>
               <div className='flex gap-4 mt-2'>
                 <div className='bg-rose-300 rounded-xl p-5 pl-10 pr-10 cursor-pointer '><span></span>1 Piece</div>
@@ -107,7 +107,7 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
               <div className='mt-2 pl-4 pr-4'>
                 <button className='bg-black text-white tracking-wider p-3 rounded-xl font-bold w-full text-center justify-center'>Add to Cart</button>
               </div>
-              <div className='mt-5 pl-4 pr-4'>
+              <div className='mt-2 pl-4 pr-4'>
                 <button className=' tracking-wider p-3 border border-pink-600 rounded-xl font-bold w-full'>Add to Wishlist</button>
               </div>
             </div>
