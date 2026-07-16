@@ -30,9 +30,9 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
             <div className='bg-rose-300 p-2  rounded-2xl text-sm text-pink-800'>Fast Delievery </div>
             <div className='bg-rose-300 p-2  rounded-2xl text-sm text-pink-800'>Refund Guarenteed </div>
           </div>
-          <hr className='mt-5 border border-rose-300'></hr>
-          <div className='tracking-tigher font-bold text-3xl mt-5'>$15.00</div>
-          <div className='flex gap-5 mt-5'>
+          <hr className='mt-3 border border-rose-300'></hr>
+          <div className='tracking-tigher font-bold text-3xl mt-3'>$15.00</div>
+          <div className='flex gap-5 mt-3'>
             <h1 className={`font-bold cursor-pointer ${selected == "description" ? "underline underline-offset-[14px] text-pink-600" : "text-black"}`}
               onClick={() => setSelected("description")}>Description</h1>
             <h1 className={`font-bold cursor-pointer ${selected == "artist" ? "underline underline-offset-[14px] text-pink-600" : "text-black"}`}
@@ -41,7 +41,7 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
               onClick={() => setSelected("shipping")}>Shipping</h1>
           </div>
           <hr className='mt-2 border border-rose-300'></hr>
-          {selected == "description" && (<div className='mt-2 p-5'>
+          {selected == "description" && (<div className=' p-5'>
 
             <div className='bg-rose-300 p-4 rounded  text-sm'>
               Weeping Lady captures the raw depth of human emotion through expressive brushwork, bold colors, and striking facial features. The artwork portrays a woman overwhelmed with grief, yet every fragmented shape and vivid hue transforms sorrow into a powerful visual statement. Rather than depicting sadness alone, it explores themes of resilience, vulnerability, and the enduring strength found in moments of heartbreak.
@@ -49,7 +49,7 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
               Its modern, expressive style makes it a compelling centerpiece for contemporary interiors, inviting viewers to reflect on the complexity of human emotions while adding a dramatic artistic presence to any space.
 
             </div>
-            <div className='mt-7'>
+            <div className='mt-4'>
               <h1 className='font-bold text-xl tracking-tighter'>About the Product</h1>
               <div className='mt-2 border border-pink-600 rounded-xl p-5 grid grid-cols-2 '>
                 <div className='flex flex-col gap-2'>
