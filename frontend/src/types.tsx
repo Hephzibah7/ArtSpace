@@ -32,3 +32,7 @@ export interface NavBarUIProps{
     navCheck:boolean,
     setNavCheck:React.Dispatch<React.SetStateAction<boolean>>
 }
+export interface CommunityUIProps{
+    selected:string,
+    setSelected:React.Dispatch<React.SetStateAction<string>>
+}

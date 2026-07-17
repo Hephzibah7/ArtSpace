@@ -105,7 +105,7 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
             </div>
              <div className='mt-5'>
             <h1 className='text-2xl  font-bold'>Certificate Of Authenticity</h1>
-            <div className='p-2 flex flex-col gap-5 text-pink-600 font-bold '>
+            <div className='p-2 flex flex-col gap-2 italic text-pink-600 font-bold '>
               <div className='flex gap-5 '>
                 <img className='w-5' src="check-mark.png"/>
                 <h1>Original Artwork</h1>
