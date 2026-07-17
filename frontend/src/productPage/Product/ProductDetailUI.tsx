@@ -23,7 +23,7 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
           </div>
           <div className='mt-3 flex justify-between'>
             <h1 className='font-bold tracking-tighter text-6xl'>The Weeping Lady</h1>
-            <div><img className='w-5' src="share.png" /></div>
+            <div className='mt-5'><img className='w-5' src="share.png" /></div>
           </div>
           <div className='mt-3 flex gap-3'>
             <div className='bg-rose-300 p-2 rounded-2xl text-sm text-pink-800'>Free Shipping </div>
@@ -66,15 +66,15 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
                     <h1>2025</h1>
                   </div>
                   <div className='flex gap-2'>
-                    <h1 className='font-bold tracking-tight'>Days Took For the - <br></br> Completion of the Art  </h1>
-                    <h1>100Days</h1>
+                    <h1 className='font-bold tracking-tight'>Completed In-  </h1>
+                    <h1>100 Days</h1>
                   </div>
-                </div>
-                <div className='flex flex-col gap-2'>
                   <div className='flex gap-2'>
                     <h1 className='font-bold tracking-tight'>Orientation - </h1>
                     <h1>Portrait</h1>
                   </div>
+                </div>
+                <div className='flex flex-col gap-2'>
                   <div className='flex gap-2'>
                     <h1 className='font-bold tracking-tight'>Category - </h1>
                     <h1>Human</h1>
@@ -99,10 +99,27 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
               <h1 className='text-2xl font-bold'>Select Your Quantity</h1>
               <div className='flex gap-4 mt-2'>
                 <div className='bg-rose-300 rounded-xl p-5 pl-10 pr-10 cursor-pointer '><span></span>1 Piece</div>
-                <div className='bg-rose-300 rounded-xl p-5 pl-10 pr-10 cursor-pointer '><span></span>1 Piece</div>
-                <div className='bg-rose-300 rounded-xl p-5 pl-10 pr-10 cursor-pointer '><span></span>1 Piece</div>
+                <div className='bg-rose-300 rounded-xl p-5 pl-10 pr-10 cursor-pointer '><span></span>2 Piece</div>
+                <div className='bg-rose-300 rounded-xl p-5 pl-10 pr-10 cursor-pointer '><span></span>3 Piece</div>
               </div>
             </div>
+             <div className='mt-5'>
+            <h1 className='text-2xl  font-bold'>Certificate Of Authenticity</h1>
+            <div className='p-2 flex flex-col gap-5 text-pink-600 font-bold '>
+              <div className='flex gap-5 '>
+                <img className='w-5' src="check-mark.png"/>
+                <h1>Original Artwork</h1>
+              </div>
+              <div className='flex gap-5'>
+                <img className='w-5' src="check-mark.png"/>
+                <h1>Signed By Artist</h1>
+              </div>
+              <div className='flex gap-5'>
+                <img className='w-5' src="check-mark.png"/>
+                <h1>Authentication Included</h1>
+              </div>
+            </div>
+           </div>
             <div className='mt-5'>
               <div className='mt-2 pl-4 pr-4'>
                 <button className='bg-black text-white tracking-wider p-3 rounded-xl font-bold w-full text-center justify-center'>Add to Cart</button>
@@ -110,6 +127,8 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
               <div className='mt-2 pl-4 pr-4'>
                 <button className=' tracking-wider p-3 border border-pink-600 rounded-xl font-bold w-full'>Add to Wishlist</button>
               </div>
+              
+          
             </div>
           </div>
           )}
@@ -143,6 +162,7 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
                    <div className='border border-pink-600 p-2 rounded font-bold'>Watercolor</div>
                 </div>
               </div>
+              <div></div> 
             </div>
           )}
 
@@ -164,8 +184,9 @@ function ProductDetailUI({ selected, setSelected }: ProductDetailUIProps) {
               </div>
             </div>
           )}
-
+           
         </div>
+       
 
       </div>
     </div>
