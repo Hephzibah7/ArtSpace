@@ -3,6 +3,7 @@ import ProductDetailComponent from './Product/ProductDetailComponent';
 import CommunityUI from './Community/CommunityUI';
 import CommunityComponent from './Community/CommunityComponent';
 import ArtistAdComponent from './ArtistAd/ArtistAdComponent';
+import CommissionComponent from '../Artist/Commission/CommissionComponent';
 
 function ProductUI() {
   return (
@@ -10,6 +11,7 @@ function ProductUI() {
       <ProductDetailComponent/>
       <CommunityComponent/>
       <ArtistAdComponent/>
+      <CommissionComponent/>
     </div>
   )
 }
