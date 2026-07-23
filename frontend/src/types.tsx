@@ -17,6 +17,20 @@ export interface RankedArtist{
     medal:string
 }
 
+export interface QuestionAnswer{
+    id:number,
+    question:string,
+    answer:string
+}
+
+export interface StoryUIProps{
+    ansData:QuestionAnswer[],
+    selected:number,
+    handleClick:(index:number)=>void
+
+}
+
+
 export interface ArtistUIProps{
     artists:RankedArtist[],
     selectId:number,
