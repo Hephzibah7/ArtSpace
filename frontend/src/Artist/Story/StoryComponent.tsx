@@ -30,6 +30,7 @@ function StoryComponent() {
       question:"Any special techniques used",
       answer:"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     }
+    
   ]
 
   const handleClick=(index:number)=>{

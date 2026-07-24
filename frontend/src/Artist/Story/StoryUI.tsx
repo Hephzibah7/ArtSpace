@@ -7,7 +7,7 @@ function StoryUI({ ansData, selected, handleClick }: StoryUIProps) {
             <div className="tracking-tighter text-4xl font-bold">The Story Behind This Artwork</div>
             <div className="mt-2 text-pink-600 font-bold italic text-sm tracking-wider">"Every Masterpiece has a story" </div>
             <div className="mt-2 grid grid-rows-2 gap-3 grid-cols-2 p-5">
-                <div className="row-span-2 flex flex-col gap-5">
+                <div className="row-span-2 flex flex-col gap-3">
                     {ansData.map((data) =>
                         <div key={data.id} onClick={() => handleClick(data.id)}>
                             <div className=" cursor-pointer flex justify-between">
@@ -64,7 +64,7 @@ function StoryUI({ ansData, selected, handleClick }: StoryUIProps) {
                     </div>
                 </div>
                 
-                <div className="row-span-1 bg-rose-300 rounded p-5">
+                <div className="row-span-1 bg-black text-white rounded p-5">
                    <div className="flex gap-1">
                     <img className="w-5 h-5" src="heart.png"/>
                      <h1 className="font-bold ">Note from the artist</h1>

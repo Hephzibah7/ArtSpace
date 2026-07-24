@@ -14,8 +14,8 @@ function App() {
     <>
       <div className='bg-yellow-200'>
         <NavBarComponent/>
-       <LandingPageComponent/>
-       {/* <ProductComponent/> */}
+       {/* <LandingPageComponent/> */}
+       <ProductComponent/>
        <FooterComponent/>
       </div>
     </>

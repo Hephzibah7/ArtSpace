@@ -9,7 +9,7 @@ function CommissionUI() {
                 <div className=" tracking-tighter">Work directly with Sarah Wilson to transform your ideas into a
                     one-of-a-kind masterpiece created exclusively for you.</div>
                 <div className=" flex gap-2 text-center justify-center  mt-2  rounded">
-                    <div className="flex gap-2 p-3 text-sm rounded-2xl cursor-pointer bg-pink-600  text-black-600 ">
+                    <div className="flex gap-2 p-3 text-sm rounded-2xl cursor-pointer bg-rose-300  text-black-600 ">
                         <div className="tracking-tighter">Explore Commission Details</div>
                         <div><img className="w-4 h-4" src="right-arrow.png" /></div>
                     </div>

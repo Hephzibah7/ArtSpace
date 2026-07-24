@@ -32,8 +32,8 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                         <img className="w-[120px] h-[70px] object-cover rounded-full" src="pic1.jpg" />
                         <div className="w-1/4 font-bold flex flex-col gap-1">
                             <h1 className="text-xl">Erice G</h1>
-                            <div className="flex gap-2">
-                                <span><img className="w-7 h-7" src="checked.png" /></span>
+                            <div className="flex gap-1">
+                                <span><img className="w-5 h-5" src="checked.png" /></span>
                                 <h3>Verified Customer</h3>
                             </div>
                         </div>
@@ -63,8 +63,8 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                         <img className="w-[120px] h-[70px] object-cover rounded-full" src="pic1.jpg" />
                         <div className="w-1/4 font-bold flex flex-col gap-1">
                             <h1 className="text-xl">Erice G</h1>
-                            <div className="flex gap-2">
-                                <span><img className="w-7 h-7" src="checked.png" /></span>
+                            <div className="flex gap-1">
+                                <span><img className="w-5 h-5" src="checked.png" /></span>
                                 <h3>Verified Customer</h3>
                             </div>
                         </div>
@@ -94,9 +94,9 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                         <img className="w-[120px] h-[70px] object-cover rounded-full" src="pic1.jpg" />
                         <div className="w-1/4 font-bold flex flex-col gap-1">
                             <h1 className="text-xl">Erice G</h1>
-                            <div className="flex gap-2">
-                                <span><img className="w-7 h-7" src="checked.png" /></span>
-                                <h3>Verified Customer</h3>
+                            <div className="flex gap-1">
+                                <span><img className="w-5 h-5" src="checked.png" /></span>
+                                <h3 className="">Verified Customer</h3>
                             </div>
                         </div>
                         <div className="flex flex-col gap-2">
