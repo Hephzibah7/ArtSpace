@@ -28,43 +28,43 @@ function StoryUI({ ansData, selected, handleClick }: StoryUIProps) {
 
 
                 </div>
-                <div className=" flex gap-2">
-                    <div className="bg-black  rounded p-5 text-sm font-bold ">
+                <div className="flex gap-1">
+                    <div className=" p-5 text-sm font-bold ">
                         <div className="flex gap-2">
-                            <h1 className="text-white mb-2  uppercase">Artist mood</h1>
+                            <h1 className=" mb-2  uppercase">Artist mood</h1>
                             <img className="w-5 h-5" src="mood.png"/>
                         </div>
-                        <div className="grid text-sm grid-cols-2 grid-rows-2 gap-2">
-                            <h2 className="  bg-pink-300 p-2 rounded">Nostaligic</h2>
-                             <h2 className=" bg-pink-300 p-2 rounded">Nostaligic</h2>
-                              <h2 className="bg-pink-300 p-2 rounded">Nostaligic</h2>
-                               <h2 className="bg-pink-300 p-2 rounded">Nostaligic</h2>
+                        <div className="grid text-sm  grid-cols-2 grid-rows-2 gap-2">
+                            <h2 className="bg-rose-400 p-2 rounded">Nostaligic</h2>
+                             <h2 className=" bg-rose-400 p-2 rounded">Nostaligic</h2>
+                              <h2 className="bg-rose-400 p-2 rounded">Nostaligic</h2>
+                               <h2 className="bg-rose-400 p-2 rounded">Nostaligic</h2>
                         </div>
                     </div>
-                    <div className="bg-black  rounded p-5 text-sm font-bold ">
+                    <div className=" p-5 text-sm font-bold ">
                        <div className="flex gap-2">
-                            <h1 className="text-white mb-2  uppercase">Color palette</h1>
+                            <h1 className=" mb-2  uppercase">Color palette</h1>
                             <img className="w-5 h-5" src="color-circle.png"/>
                         </div>
-                        <div className="grid text-sm grid-cols-2 grid-rows-2 gap-2">
-                            <h2 className="  bg-pink-300 p-2 rounded">Blue</h2>
-                             <h2 className=" bg-pink-300 p-2 rounded">Nostaligic</h2>
+                        <div className="grid text-sm grid-cols-2  grid-rows-2 gap-2">
+                            <h2 className="  bg-rose-400 p-2 rounded text-center">Blue</h2>
+                             <h2 className=" bg-rose-400 p-2 rounded text-center">Nostaligic</h2>
                               
                         </div>
                     </div>
-                    <div className="bg-black  rounded p-5 text-sm font-bold ">
+                    <div className="p-5 text-sm font-bold ">
                         <div className="flex gap-2">
-                            <h1 className="text-white mb-2  uppercase">Techniques used</h1>
+                            <h1 className=" mb-2  uppercase font-bold">Techniques used</h1>
                             <img className="w-5 h-5" src="paint-brush.png"/>
                         </div>
                         <div className="grid text-sm grid-cols-2 grid-rows-2 gap-2">
-                            <h2 className="  bg-pink-300 p-2 rounded">layering</h2>
-                            <h2 className="  bg-pink-300 p-2 rounded">layering</h2>
+                            <h2 className="  bg-rose-400 p-2 rounded text-center">layering</h2>
+                            <h2 className="  bg-rose-400 p-2 rounded text-center">layering</h2>
                         </div>
                     </div>
                 </div>
                 
-                <div className="row-span-1 bg-black text-white rounded p-5">
+                <div className="row-span-1  border border-pink-600 rounded p-3">
                    <div className="flex gap-1">
                     <img className="w-5 h-5" src="heart.png"/>
                      <h1 className="font-bold ">Note from the artist</h1>

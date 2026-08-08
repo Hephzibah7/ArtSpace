@@ -10,8 +10,8 @@ function ArtistAdUI() {
                 <div>Discover more artworks by this artist</div>
                 <div className='cursor-pointer font-bold underline'>View Profile</div>
             </div>
-            <div className='flex gap-2 mt-5'>
-                <div className='border border-black p-3 rounded-xl '>
+            <div className='flex gap-5 mt-5'>
+                <div className=' p-3 rounded-xl '>
                     <img className="object-cover h-[250px] w-[270px] rounded-xl" src="pic1.jpg" />
                     <div className='flex justify-between gap-5'>
                         <div className='text-2xl font-bold tracking-tighter uppercase mt-2 '>The weeping artist</div>
@@ -28,7 +28,7 @@ function ArtistAdUI() {
                         <img className='w-4 h-4 mt-1' src="right-arrow.png"/>
                     </div>
                 </div>
-                <div className='border border-black p-3 rounded-xl '>
+                <div className=' p-3 rounded-xl '>
                     <img className="object-cover h-[250px] w-[270px] rounded-xl" src="pic1.jpg" />
                     <div className='flex justify-between gap-5'>
                         <div className='text-2xl font-bold tracking-tighter uppercase mt-2 '>The weeping artist</div>
@@ -45,7 +45,7 @@ function ArtistAdUI() {
                         <img className='w-4 h-4 mt-1' src="right-arrow.png"/>
                     </div>
                 </div>
-                <div className='border border-black p-3 rounded-xl '>
+                <div className=' p-3 rounded-xl '>
                     <img className="object-cover h-[250px] w-[270px] rounded-xl" src="pic1.jpg" />
                     <div className='flex justify-between gap-5'>
                         <div className='text-2xl font-bold tracking-tighter uppercase mt-2 '>The weeping artist</div>
@@ -62,7 +62,7 @@ function ArtistAdUI() {
                         <img className='w-4 h-4 mt-1' src="right-arrow.png"/>
                     </div>
                 </div>
-                <div className='border border-black p-3 rounded-xl '>
+                <div className=' p-3 rounded-xl '>
                     <img className="object-cover h-[250px] w-[270px] rounded-xl" src="pic1.jpg" />
                     <div className='flex justify-between gap-5'>
                         <div className='text-2xl font-bold tracking-tighter uppercase mt-2 '>The weeping artist</div>
@@ -79,7 +79,7 @@ function ArtistAdUI() {
                         <img className='w-4 h-4 mt-1' src="right-arrow.png"/>
                     </div>
                 </div>
-                <div className='border border-black p-3 rounded-xl '>
+                <div className=' p-3 rounded-xl '>
                     <img className="object-cover h-[250px] w-[270px] rounded-xl" src="pic1.jpg" />
                     <div className='flex justify-between gap-5'>
                         <div className='text-2xl font-bold tracking-tighter uppercase mt-2 '>The weeping artist</div>
