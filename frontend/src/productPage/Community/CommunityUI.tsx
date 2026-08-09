@@ -1,4 +1,6 @@
 import type { CommunityUIProps } from "../../types"
+import { motion } from "framer-motion"
+import { fadeDown, fadeLeft, fadeRight, fadeUp, slow, fast, spring, hoverCard, tap } from "../../animations"
 
 function CommunityUI({ selected, setSelected }: CommunityUIProps) {
     return (
@@ -27,8 +29,13 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                     <div onClick={() => { setSelected("buyer") }} className={`cursor-pointer ${selected == "buyer" ? "underline underline-offset-[14px] text-pink-600" : "text-black"} `}>Buyer Reviews</div>
                     <div onClick={() => { setSelected("artlover") }} className={`cursor-pointer ${selected == "artlover" ? "underline underline-offset-[14px] text-pink-600" : "text-black"}`}>Art Lovers</div>
                 </div>
-                {selected=="buyer" && <div className="mt-5 flex flex-col gap-5">
-                    <div className="p-5 flex gap-3 border border-pink-600 rounded-xl text-sm">
+                {selected == "buyer" && <div className="mt-5 flex flex-col gap-5">
+                    <motion.div
+                        variants={fadeDown}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={slow}
+                        className="p-5 flex gap-3 border border-pink-600 rounded-xl text-sm">
                         <img className="w-[120px] h-[70px] object-cover rounded-full" src="pic1.jpg" />
                         <div className="w-1/4 font-bold flex flex-col gap-1">
                             <h1 className="text-xl">Erice G</h1>
@@ -53,13 +60,18 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                                 in person.
                             </div>
                             <div className="flex gap-1">
-                                <img className="w-5 h-5" src="package-delivered.png"/>
+                                <img className="w-5 h-5" src="package-delivered.png" />
                                 <div className="font-bold">Delivered on May 12</div>
                             </div>
                         </div>
-                        
-                    </div>
-                     <div className="p-5 flex gap-3 border border-pink-600 rounded-xl text-sm">
+
+                    </motion.div>
+                    <motion.div
+                        variants={fadeDown}
+                        initial="hidden"
+                        whileInView="visible"
+                        transition={slow}
+                        className="p-5 flex gap-3 border border-pink-600 rounded-xl text-sm">
                         <img className="w-[120px] h-[70px] object-cover rounded-full" src="pic1.jpg" />
                         <div className="w-1/4 font-bold flex flex-col gap-1">
                             <h1 className="text-xl">Erice G</h1>
@@ -84,13 +96,18 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                                 in person.
                             </div>
                             <div className="flex gap-1">
-                                <img className="w-5 h-5" src="package-delivered.png"/>
+                                <img className="w-5 h-5" src="package-delivered.png" />
                                 <div className="font-bold">Delivered on May 12</div>
                             </div>
                         </div>
-                        
-                    </div>
-                     <div className="p-5 flex gap-3 border border-pink-600 rounded-xl text-sm">
+
+                    </motion.div>
+                    <motion.div
+                    variants={fadeDown}
+                              initial="hidden"
+                              whileInView="visible"
+                              transition={slow}
+                     className="p-5 flex gap-3 border border-pink-600 rounded-xl text-sm">
                         <img className="w-[120px] h-[70px] object-cover rounded-full" src="pic1.jpg" />
                         <div className="w-1/4 font-bold flex flex-col gap-1">
                             <h1 className="text-xl">Erice G</h1>
@@ -115,19 +132,19 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                                 in person.
                             </div>
                             <div className="flex gap-1">
-                                <img className="w-5 h-5" src="package-delivered.png"/>
+                                <img className="w-5 h-5" src="package-delivered.png" />
                                 <div className="font-bold">Delivered on May 12</div>
                             </div>
                         </div>
-                        
-                    </div>
+
+                    </motion.div>
 
 
                 </div>}
-                { selected=="artlover" && <div className="mt-5 flex flex-col gap-5 text-sm ">
+                {selected == "artlover" && <div className="mt-5 flex flex-col gap-5 text-sm ">
                     <div className="flex flex-col gap-3 border border-pink-600 rounded p-5">
                         <div className="flex gap-1">
-                            <img  className="w-5 h-5" src="heart.png"/>
+                            <img className="w-5 h-5" src="heart.png" />
                             <h1>Loved this artwork</h1>
                         </div>
                         <div className="italic">
@@ -137,9 +154,9 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                             -Sophie Lee
                         </div>
                     </div>
-                     <div className="flex flex-col gap-3 border border-pink-600 rounded p-5">
+                    <div className="flex flex-col gap-3 border border-pink-600 rounded p-5">
                         <div className="flex gap-1">
-                            <img  className="w-5 h-5" src="heart.png"/>
+                            <img className="w-5 h-5" src="heart.png" />
                             <h1>Loved this artwork</h1>
                         </div>
                         <div className="italic">
@@ -149,9 +166,9 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                             -Sophie Lee
                         </div>
                     </div>
-                     <div className="flex flex-col gap-3 border border-pink-600 rounded p-5">
+                    <div className="flex flex-col gap-3 border border-pink-600 rounded p-5">
                         <div className="flex gap-1">
-                            <img  className="w-5 h-5" src="heart.png"/>
+                            <img className="w-5 h-5" src="heart.png" />
                             <h1>Loved this artwork</h1>
                         </div>
                         <div className="italic">
@@ -161,7 +178,7 @@ function CommunityUI({ selected, setSelected }: CommunityUIProps) {
                             -Sophie Lee
                         </div>
                     </div>
-                    
+
                 </div>}
             </div>
         </div>
