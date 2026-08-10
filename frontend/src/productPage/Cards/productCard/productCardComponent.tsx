@@ -1,11 +1,11 @@
 
-import productCardUI from './productCardUI'
-function productCardComponent() {
+import ProductCardUI from "./productCardUI"
+function ProductCardComponent() {
   return (
     <div>
-      <productCardUI/>
+        <ProductCardUI/>
     </div>
   )
 }
 
-export default productCardComponent
+export default ProductCardComponent

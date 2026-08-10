@@ -2,7 +2,7 @@
 import { hover, motion } from "framer-motion"
 import { fadeDown, fadeLeft, fadeRight, fadeUp, slow, fast, spring, hoverCard, tap } from "../../../animations"
 
-function productCardUI() {
+function ProductCardUI() {
     return (
         <div>
             <motion.div
@@ -31,4 +31,4 @@ function productCardUI() {
     )
 }
 
-export default productCardUI;
+export default ProductCardUI;
