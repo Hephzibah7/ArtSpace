@@ -1,88 +1,208 @@
 import mongoose from "mongoose";
-import { AVAILABLE, RESERVED, SOLD } from "../utils/constants.js";
+import { IProduct } from "../types/productType.js";
+import { ACTIVE, ARCHIVED, DIGITAL, LIMITED_PRINT, ORIGINAL } from "../utils/constants.js";
 
-const productSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema<IProduct>(
+  {
+    title: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
-  title: {
-    type: String,
-    required: true
-  },
+    description: {
+      type: String,
+      required: true,
+    },
 
-  description: {
-    type: String,
-    required: true
-  },
+     isForSale: {
+      type: Boolean,
+      default: false,
+    },
 
-  price: {
-    type: Number,
-    required: true
-  },
+    price: {
+      type: Number,
+      min: 0,
+    },
 
-  imageUrl: {
-    type: String,
-    required: true
-  },
+    productType: {
+      type: String,
+      enum: [ORIGINAL, LIMITED_PRINT, DIGITAL],
+      required: true,
+    },
 
-  category: {
-    type: String,
-    required: true
-  },
+    category: {
+      type: String,
+      required: true,
+    },
 
-  medium: {
-    type: String,
-    required: true
-  },
+    artistId: {
+      type: String,
+      required: true,
+      index: true,
+    },
 
-  dimensions: {
-    type: String,
-    required: true
-  },
+   
 
-  tags: [{
-    type: String,
-    required: true
-  }],
+    status: {
+      type: String,
+      enum: [ACTIVE, ARCHIVED],
+      default:ACTIVE,
+    },
 
-  sellerId: {
-    type: String,
-    required: true
-  },
+    images: {
+      primary: {
+        type: String,
+        required: true,
+      },
 
-  reservedBy:{
-  type:String,
-  default:null
-},
+      gallery: {
+        type: [String],
+        default: [],
+      },
+    },
 
+    artworkDetails: {
+      dimensions: {
+        width: {
+          type: Number,
+          required: true,
+        },
 
-reservationExpiresAt: {
-  type: Date,
-  default: null
-},
+        height: {
+          type: Number,
+          required: true,
+        },
 
-  status: {
-    type: String,
+        unit: {
+          type: String,
+          required: true,
+        },
+      },
 
-    enum: [
-     AVAILABLE,
-     RESERVED,
-     SOLD
+      weight: {
+        value: {
+          type: Number,
+        },
+
+        unit: {
+          type: String,
+        },
+      },
+
+      orientation: {
+        type: String,
+        required: true,
+      },
+
+      medium: {
+        type: String,
+        required: true,
+      },
+
+      style: {
+        type: String,
+        required: true,
+      },
+
+      frame: {
+        type: String,
+        required: true,
+      },
+
+      yearCreated: {
+        type: Number,
+        required: true,
+      },
+
+      completionDays: {
+        type: Number,
+         required: true,
+      },
+    },
+
+    artisticDetails: {
+      isSignedByArtist: {
+        type: Boolean,
+        default: false,
+      },
+
+      moods: {
+        type: [String],
+        default: [],
+         required: true,
+      },
+
+      colorPalette: {
+        type: [String],
+        default: [],
+         required: true,
+      },
+
+      techniquesUsed: {
+        type: [String],
+        default: [],
+         required: true,
+      },
+
+      noteFromArtist: {
+        type: String,
+        default: "",
+         required: true,
+      },
+    },
+
+    story: [
+      {
+        question: {
+          type: String,
+          required: true,
+        },
+
+        answer: {
+          type: String,
+          required: true,
+        },
+      },
     ],
 
-    default: "AVAILABLE"
+    shipping: {
+      free: {
+        type: Boolean,
+        default: false,
+      },
+
+      fastDelivery: {
+        type: Boolean,
+        default: false,
+      },
+
+      estimatedDeliveryDays: {
+        min: {
+          type: Number,
+        },
+
+        max: {
+          type: Number,
+        },
+      },
+    },
+
+    returnPolicy: {
+      eligible: {
+        type: Boolean,
+        default: false,
+      },
+
+      days: {
+        type: Number,
+        default: 0,
+      },
+    },
+  },
+  {
+    timestamps: true,
   }
-
-}, {
-  timestamps: true
-}
-
-
-
-
 );
 
-const Product =  mongoose.model(
-  "Product",
-  productSchema
-);
-
-export default Product;
+export default mongoose.model<IProduct>("Product", ProductSchema);

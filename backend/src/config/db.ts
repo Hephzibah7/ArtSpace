@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const mongoURI ="mongodb://artist:artist@ac-pmxvjdh-shard-00-00.ukw9uwv.mongodb.net:27017,ac-pmxvjdh-shard-00-01.ukw9uwv.mongodb.net:27017,ac-pmxvjdh-shard-00-02.ukw9uwv.mongodb.net:27017/?ssl=true&replicaSet=atlas-54e56s-shard-0&authSource=admin&appName=Cluster0";
+const mongoURI ="mongodb://hephzibahranjan_db_user:6SxWeo0K9UvsAshf@ac-lgvitaq-shard-00-00.rvrgdg2.mongodb.net:27017,ac-lgvitaq-shard-00-01.rvrgdg2.mongodb.net:27017,ac-lgvitaq-shard-00-02.rvrgdg2.mongodb.net:27017/?ssl=true&replicaSet=atlas-iay5m0-shard-0&authSource=admin&appName=Cluster0";
 mongoose.set('debug', true);
 // Function to connect to MongoDB
 export const connectDB = async () => {

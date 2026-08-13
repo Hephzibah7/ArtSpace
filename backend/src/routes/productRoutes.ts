@@ -14,8 +14,6 @@ router.get("/",verifyToken,authorize(permissions.READ_ALL_PRODUCT),productContro
 router.get("/seller/sellerId", verifyToken, authorize(permissions.READ_SELLER_PRODUCT),  readSellerProductValidator, validate, productController.getAllSellerProduct);
 router.get("/productId/seller/sellerId", verifyToken, authorize(permissions.READ_SINGLE_PRODUCT), readSingleProductValidator, validate, productController.getSellerProduct);
 router.patch("/", verifyToken, authorize(permissions.UPDATE_PRODUCT), updateProductValidator,validate, productController.updateProduct);
-router.patch("/productId/reserve", verifyToken, reservceProductValidator, validate, productController.reserveProduct);
-router.patch("/productId/sold", verifyToken,productController.markProductSold);
-router.patch("/productId/release", verifyToken, productController.markProductRelease);
+
 export default router;
 

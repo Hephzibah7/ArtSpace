@@ -52,39 +52,7 @@ async function updateProduct(data:any, productId:string){
     )
 }
 
-async function reserveProduct(id:string, productId:string){
-    const product = await Product.findById(productId);
-    if(!product) throw new BadRequestError("Product does not Exist");
-    if(product.status == SOLD) throw new BadRequestError("Artwork Already Sold");
-    if(product.status == RESERVED) {
-            throw new BadRequestError("Artwork Currently Reserved");
-    }
-     // Reserve for 10 minutes
-    const expiration = new Date(
-      Date.now() + 10 * 60 * 1000
-    );
-    product.status=RESERVED;
-    product.reservedBy=id;
-    product.reservationExpiresAt=expiration;
-    product.save();
 
-}
-
-async function markProductSold(productId:string){
-     const product = await Product.findById(productId);
-    if(!product) throw new BadRequestError("Product does not Exist");
-    if(product.status == SOLD) throw new BadRequestError("Artwork Already Sold");
-    product.status=SOLD;
-    product.save();
-}
-
-async function markProductRelease(productId:string){
-    const product = await Product.findById(productId);
-    if(!product) throw new BadRequestError("Product does not Exist");
-    if(product.status == SOLD) throw new BadRequestError("Artwork Already Sold");
-    product.status=AVAILABLE;
-    product.save();
-}
 
 
 
@@ -95,9 +63,7 @@ const productRepositary={
     getSellerProduct:getSellerProduct,
     getAllSellerProduct:getAllSellerProduct,
     updateProduct:updateProduct,
-    reserveProduct:reserveProduct,
-    markProductSold:markProductSold,
-    markProductRelease
+  
 }
 
 export default productRepositary;
