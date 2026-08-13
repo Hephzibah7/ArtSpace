@@ -6,7 +6,7 @@ export interface IProduct extends Document {
 
   productType: "ORIGINAL" | "LIMITED_PRINT" | "DIGITAL";
   category: string;
-  artistId: string;
+  artistId:  mongoose.Schema.Types.ObjectId;
 
   isForSale: boolean;
   status: "ACTIVE" | "ARCHIVED";

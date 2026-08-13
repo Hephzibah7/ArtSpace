@@ -15,7 +15,7 @@ const ProductSchema = new mongoose.Schema<IProduct>(
       required: true,
     },
 
-     isForSale: {
+    isForSale: {
       type: Boolean,
       default: false,
     },
@@ -37,17 +37,18 @@ const ProductSchema = new mongoose.Schema<IProduct>(
     },
 
     artistId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Artist",
       required: true,
       index: true,
     },
 
-   
+
 
     status: {
       type: String,
       enum: [ACTIVE, ARCHIVED],
-      default:ACTIVE,
+      default: ACTIVE,
     },
 
     images: {
@@ -117,7 +118,7 @@ const ProductSchema = new mongoose.Schema<IProduct>(
 
       completionDays: {
         type: Number,
-         required: true,
+        required: true,
       },
     },
 
@@ -130,25 +131,25 @@ const ProductSchema = new mongoose.Schema<IProduct>(
       moods: {
         type: [String],
         default: [],
-         required: true,
+        required: true,
       },
 
       colorPalette: {
         type: [String],
         default: [],
-         required: true,
+        required: true,
       },
 
       techniquesUsed: {
         type: [String],
         default: [],
-         required: true,
+        required: true,
       },
 
       noteFromArtist: {
         type: String,
         default: "",
-         required: true,
+        required: true,
       },
     },
 
@@ -205,4 +206,6 @@ const ProductSchema = new mongoose.Schema<IProduct>(
   }
 );
 
-export default mongoose.model<IProduct>("Product", ProductSchema);
+const Product = mongoose.model<IProduct>("Product", ProductSchema)
+
+export default Product;
