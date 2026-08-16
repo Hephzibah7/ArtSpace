@@ -1,7 +1,7 @@
 export interface IArtist extends Document {
   userId: string;
 
-  displayName: string;
+  artistName: string;
   bio: string;
 
   profileImage?: string;
@@ -9,11 +9,11 @@ export interface IArtist extends Document {
 
   shipsFrom: {
     city: string;
-    state?: string;
+    state: string;
     country: string;
   };
 
-  specialization: string[];
+  specializations: string[];
   mediums: string[];
   styles: string[];
   techniques: string[];

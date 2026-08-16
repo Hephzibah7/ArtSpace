@@ -4,8 +4,8 @@ import { param } from 'express-validator';
 export const createProductValidator = [
   check('title', 'Please enter a Title')
     .not()
-    .isString()
-    .isEmpty(),
+    .isEmpty()
+    .isString(),
 
   check('description', 'Please enter a description')
     .not()

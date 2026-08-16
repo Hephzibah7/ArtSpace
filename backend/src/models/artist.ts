@@ -10,7 +10,7 @@ const ArtistSchema = new mongoose.Schema<IArtist>(
       index: true,
     },
 
-    displayName: {
+    artistName: {
       type: String,
       required: true,
       trim: true,
@@ -48,7 +48,7 @@ const ArtistSchema = new mongoose.Schema<IArtist>(
       },
     },
 
-    specialization: {
+    specializations: {
       type: [String],
       default: [],
     },
