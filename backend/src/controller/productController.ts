@@ -1,7 +1,5 @@
 import {Request, Response, NextFunction} from "express"
 import productService from "../services/productService.js";
-import productRepositary from "../repositaries/productRepositary.js";
-import { BadRequestError } from "../errors/AppError.js";
 
 async function createProduct(req:Request, res:Response, next:NextFunction){
     try{
