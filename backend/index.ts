@@ -8,6 +8,7 @@ import userRoutes from "./src/routes/userRoutes.js"
 import productRoutes from "./src/routes/productRoutes.js"
 import "./src/cron/reservationCron.js"
 import orderRoutes from "./src/routes/orderRoutes.js"
+import artistRoutes from "./src/routes/artistRoutes.js"
 
 dotenv.config();  
 
@@ -32,6 +33,7 @@ connectDB();
 app.use("/api/auth", userRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/order", orderRoutes);
+app.use("api/artist", artistRoutes);
 
 
 //errorHandler should be registered last

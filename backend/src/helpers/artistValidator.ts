@@ -39,7 +39,7 @@ export const createArtistValidator=[
     
 ];
 
-export const getArtist=[
+export const getArtistValidator=[
     validateMongoIdParam("artistId")
 ]
 
