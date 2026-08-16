@@ -32,7 +32,7 @@ export const validateOptionalFieldString = (fieldName:string) => {
 export const validateOptionalFieldNumber = (fieldName:string) => {
   return check(fieldName).optional().isNumeric();
 };
-const validateMongoIdParam = (paramName:string, entityName = 'ID') => {
+export const validateMongoIdParam = (paramName:string, entityName = 'ID') => {
   return param(paramName)
     .exists()
     .withMessage(`${entityName} param is required`)

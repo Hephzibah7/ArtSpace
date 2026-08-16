@@ -16,7 +16,7 @@ async function createArtist(req:Request, res:Response, next:NextFunction){
 
 async function getArtist(req:Request, res:Response, next:NextFunction){
     try{
-        const artistData=await artistService.getArtist(req.user as string);
+        const artistData=await artistService.getArtist(req.params.artistId);
          res.status(200).json({
         success:true,
         data:artistData

@@ -1,7 +1,7 @@
 
 import {validateRequiredFieldString, validateOptionalFieldString,
     validateOptionalFieldNumber, validateRequiredFieldArray,
-    validateRequiredFieldBoolean
+    validateRequiredFieldBoolean, validateMongoIdParam
  } from './validationRequired.js';
 
 
@@ -38,5 +38,9 @@ export const createArtistValidator=[
     validateOptionalFieldString("socialLinks.twitter")
     
 ];
+
+export const getArtist=[
+    validateMongoIdParam("artistId")
+]
 
 
