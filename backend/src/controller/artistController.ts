@@ -42,7 +42,7 @@ async function getAllArtist(req:Request, res:Response, next:NextFunction){
 
 async function deleteArtist(req:Request, res:Response, next:NextFunction){
     try{
-        await artistService.deleteArtist(req.user as string);
+        await artistService.deleteArtist(req.params.artistId);
         res.status(200).json({
         success:true,
         message:"Artist deleted successfully!",
@@ -55,7 +55,7 @@ async function deleteArtist(req:Request, res:Response, next:NextFunction){
 
 async function updateArtist(req:Request, res:Response, next:NextFunction){
     try{
-        const artistData=await artistService.updateArtist(req.body,req.user as string);
+        const artistData=await artistService.updateArtist(req.params.artistId);
          res.status(200).json({
         success:true,
         message:"Artist updated successfully",

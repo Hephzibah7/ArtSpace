@@ -1,29 +1,23 @@
 import Artist from "../models/artist.js";
-import { BadRequestError, NotFoundError } from "../errors/AppError.js";
+import {NotFoundError } from "../errors/AppError.js";
 import prisma from "../../prisma/prisma.js";
 
 
-async function createArtist(data: any, artistId: string) {
+async function createArtist(data: any, userId: string) {
     const isExist = await prisma.user.findUnique({
         where: {
-            id: artistId
+            id: userId
         }
 
     })
-    if(!isExist) throw new NotFoundError("Artist does not Exist")
-    const newArtist=new Artist({...data,userId:artistId});
+    if(!isExist) throw new NotFoundError("User does not Exist")
+    const newArtist=new Artist({...data,userId:userId});
     await newArtist.save();
 }
 
 async function getArtist(artistId:string){
-     const isExist = await prisma.user.findUnique({
-        where: {
-            id: artistId
-        }
-
-    })
-    if(!isExist) throw new NotFoundError("Artist does not Exist")
-    const artistData=await Artist.findById({userId:artistId});
+    const artistData=await Artist.findById({artistId});
+    if(!artistId) throw new NotFoundError("Artist does not exist")
     return artistData;
 }
 async function getAllArtist(){
@@ -31,28 +25,18 @@ async function getAllArtist(){
     return allArtistData;
 }
 async function deleteArtist(artistId:string){
-     const isExist = await prisma.user.findUnique({
-        where: {
-            id: artistId
-        }
-
-    })
-    if(!isExist) throw new NotFoundError("Artist does not Exist")
+    const artistData=await Artist.findById(artistId);
+    if(!artistData) throw new NotFoundError("Artist does not exist");
     await Artist.findByIdAndDelete({userId:artistId});
 }
 async function updateArtist(data:any, artistId:string){
-     const isExist = await prisma.user.findUnique({
-        where: {
-            id: artistId
-        }
-
-    })
-    if(!isExist) throw new NotFoundError("Artist does not Exist")
-    const artistData = await Artist.findByIdAndUpdate(artistId,
+    const artistData=await Artist.findById(artistId);
+    if(!artistData) throw new NotFoundError("Artist does not exist")
+    const newArtistData = await Artist.findByIdAndUpdate(artistId,
         data,
         {new:true}
         )
-        return artistData;
+        return newArtistData;
 }
 
 const artistRepositary={
