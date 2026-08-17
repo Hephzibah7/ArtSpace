@@ -18,7 +18,8 @@ export default async function roleSeed() {
       name: BUYER,
 
       permissions: [
-        permissions.READ_ALL_PRODUCT
+        permissions.READ_ALL_PRODUCTS,
+        permissions.READ_PRODUCT
       ]
     }
   });
@@ -37,8 +38,7 @@ export default async function roleSeed() {
         permissions.CREATE_PRODUCT,
         permissions.DELETE_PRODUCT,
         permissions.UPDATE_PRODUCT,
-        permissions.READ_ALL_PRODUCT,
-        permissions.CHANGE_PRODUCT_STATUS
+
       ]
     }
   });
