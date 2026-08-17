@@ -7,6 +7,12 @@ export const validateRequiredFieldString = (fieldName:string, message:string) =>
     .isEmpty()
     .isString(); // Optional: ensures the input is actually a string
 };
+export const validateRequiredFieldNumber = (fieldName:string, message:string) => {
+  return check(fieldName, message)
+    .not()
+    .isEmpty()
+    .isNumber(); // Optional: ensures the input is actually a number
+};
 export const validateRequiredFieldArray = (fieldName:string, message:string) => {
   return [
     // 1. Ensure the field itself is an array and not empty

@@ -189,7 +189,7 @@ const ProductSchema = new mongoose.Schema<IProduct>(
       },
     },
 
-    certificate_of_authenticity:{
+    certificateOfAuthenticity:{
       type:String,
       required:true
 
