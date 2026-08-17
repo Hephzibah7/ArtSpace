@@ -14,3 +14,5 @@ router.get("/productId", verifyToken, authorize(permissions.READ_PRODUCT), getPr
 router.get("/", verifyToken, authorize(permissions.READ_ALL_PRODUCTS), productController.getAllProduct);
 router.delete("/", verifyToken, authorize(permissions.DELETE_PRODUCT), deleteProductValidator, validate, productController.deleteProduct);
 router.patch("/", verifyToken, authorize(permissions.UPDATE_PRODUCT), updateProductValidator, validate, productController.updateProduct);
+
+export default router;
