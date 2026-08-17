@@ -189,6 +189,12 @@ const ProductSchema = new mongoose.Schema<IProduct>(
       },
     },
 
+    certificate_of_authenticity:{
+      type:String,
+      required:true
+
+    },
+
     returnPolicy: {
       eligible: {
         type: Boolean,

@@ -59,6 +59,8 @@ export interface IProduct extends Document {
     };
   };
 
+  certificate_of_authenticity:string;
+
   returnPolicy: {
     eligible: boolean;
     days: number;
