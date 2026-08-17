@@ -11,7 +11,7 @@ export const validateRequiredFieldNumber = (fieldName:string, message:string) =>
   return check(fieldName, message)
     .not()
     .isEmpty()
-    .isNumber(); // Optional: ensures the input is actually a number
+    .isNumeric(); // Optional: ensures the input is actually a number
 };
 export const validateRequiredFieldArray = (fieldName:string, message:string) => {
   return [
