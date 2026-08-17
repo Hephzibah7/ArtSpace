@@ -34,13 +34,26 @@ async function getAllProduct(){
 async function deleteProduct(productId:string){
     const productData = await Product.findById(productId);
     if(!productData) throw new NotFoundError("Product does not exist");
-
+    await Product.findByIdAndDelete(productId);
 }
+async function updateProduct(data:any, productId:string){
+    const productData = await Product.findById(productId);
+    if(!productData) throw new NotFoundError("Product does not exist");
+    const newProductData=await Product.findByIdAndUpdate(productId,
+        data,
+        {new:true}
+    )
+    return newProductData;
+}
+
+
 
 const productRepositary={
     createProduct,
     getProduct,
-    getAllProduct
+    getAllProduct,
+    deleteProduct,
+    updateProduct
 }
 
 export default productRepositary;
