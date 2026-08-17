@@ -4,16 +4,9 @@ import Artist from "../models/artist.js";
 import prisma from "../../prisma/prisma.js";
 
 
-async function createProduct(data:any, userId:string){
-    const isExist = await prisma.user.findUnique({
-        where:{
-            id:userId
-        }
-    })
-    if(!isExist) throw new NotFoundError("User does not exist");
-    const artist=await Artist.findById({userId:userId});
+async function createProduct(data:any, artistId:string){
+    const artist=await Artist.findById({artistId});
     if(!artist) throw new NotFoundError("Artist does not exist")
-    const artistId=artist?.id;
     const newProduct = new Product({...data,artistId});
     await newProduct.save();
 
