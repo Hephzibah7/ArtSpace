@@ -23,7 +23,11 @@ const authorize = (requiredPermission: string) => {
       },
 
       include: {
-        role: true
+        roles: {
+          include:{
+            role:true
+          }
+        }
       }
     });
 
@@ -31,19 +35,25 @@ const authorize = (requiredPermission: string) => {
       throw new InternalServerError();
     }
 
-    // ADMIN bypass
-    if (user.role.name === ADMIN) {
+     // ADMIN bypass
+    const isAdmin = user.roles.some(
+      userRole => userRole.role.name === ADMIN
+    );
+
+    if (isAdmin) {
       return next();
     }
 
 
-    // Permission check
-    if (
-      !user.role.permissions.includes(requiredPermission)
-    ) {
+   // Check permission across ALL roles
+    const hasPermission = user.roles.some(
+      userRole =>
+        userRole.role.permissions.includes(requiredPermission)
+    );
+
+    if (!hasPermission) {
       throw new ForbiddenError("Access Denied");
     }
-
     next();
   };
 };
