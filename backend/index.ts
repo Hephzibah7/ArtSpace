@@ -9,7 +9,7 @@ import productRoutes from "./src/routes/productRoutes.js"
 import "./src/cron/reservationCron.js"
 import orderRoutes from "./src/routes/orderRoutes.js"
 import artistRoutes from "./src/routes/artistRoutes.js"
-
+import cartRoutes from "./src/routes/cartRoutes.js"
 dotenv.config();  
 
 const app = express();
@@ -34,7 +34,7 @@ app.use("/api/auth", userRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/order", orderRoutes);
 app.use("api/artist", artistRoutes);
-
+app.use("api/cart",cartRoutes);
 
 //errorHandler should be registered last
 app.use(errorHandler);

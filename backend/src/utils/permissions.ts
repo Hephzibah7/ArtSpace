@@ -16,6 +16,8 @@ export const permissions={
     UPDATE_ARTIST:"UPATE_ARTIST",
     GET_CART:"GET_CART",
     ADD_ITEM:"ADD_ITEM",
-    
+    UPDATE_ITEM:"UPDATE_ITEM",
+    REMOVE_ITEM:"REMOVE_ITEM",
+    DELETE_CART:"DELETE_CART"
 
 }
