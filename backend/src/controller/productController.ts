@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from "express"
-import { productService } from "../services/productService.js"
-import productRepositary from "../repositaries/productRepositary.js";
-
+import { productService } from "../services/productService.js";
 async function createProduct(req: Request, res: Response, next: NextFunction) {
     try {
         await productService.createProduct(req.body, req.params.artistId);
@@ -17,7 +15,7 @@ async function createProduct(req: Request, res: Response, next: NextFunction) {
 
 async function getProduct(req: Request, res: Response, next: NextFunction) {
     try {
-        const productData = await productRepositary.getProduct(req.params.productId);
+        const productData = await productService.getProduct(req.params.productId);
         res.status(200).json({
             success: true,
             data: productData
@@ -31,7 +29,7 @@ async function getProduct(req: Request, res: Response, next: NextFunction) {
 
 async function getAllProduct(req: Request, res: Response, next: NextFunction) {
     try {
-        const allProductData = await productRepositary.getAllProduct();
+        const allProductData = await productService.getAllProduct();
         res.status(200).json({
             success: true,
             data: allProductData
@@ -43,7 +41,7 @@ async function getAllProduct(req: Request, res: Response, next: NextFunction) {
 }
 async function deleteProduct(req: Request, res: Response, next: NextFunction) {
     try {
-        await productRepositary.deleteProduct(req.params.productId);
+        await productService.deleteProduct(req.params.productId);
         res.status(200).json({
             success: true,
             message: "Product deleted successfully!"
@@ -56,7 +54,7 @@ async function deleteProduct(req: Request, res: Response, next: NextFunction) {
 
 async function updateProduct(req:Request, res:Response, next:NextFunction){
     try{
-        const newProductData = await productRepositary.updateProduct(req.body, req.params.productId);
+        const newProductData = await productService.updateProduct(req.body, req.params.productId);
         res.status(200).json({
             success: true,
             message: "Product updated successfully!",
