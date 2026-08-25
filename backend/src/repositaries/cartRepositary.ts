@@ -27,7 +27,9 @@ async function getCart(userId:string){
 async function addItem(userId:string, productId:string, quantity:number){
     if(quantity<0) throw new BadRequestError("Quantity should be greater than zero");
     let cart = await prisma.cart.findUnique({
-        userId:userId
+        where:{
+            userId:userId
+        }
     })
     if(!cart){
          cart = await prisma.cart.create({
@@ -39,7 +41,7 @@ async function addItem(userId:string, productId:string, quantity:number){
             }
         })
     }
-    const existingItem = await prisma.cartItem.findUnique({
+    let existingItem = await prisma.cartItem.findUnique({
         where:{
             productId:productId
         }
@@ -56,7 +58,7 @@ async function addItem(userId:string, productId:string, quantity:number){
             }
         })
     }
-    return await prisma.cartItem.create({
+    await prisma.cartItem.create({
         data:{
             cartId:cart.id,
             productId,
@@ -82,7 +84,7 @@ async function updateItem(userId:string, productId:string, quantity:number){
         }
     })
     if(!item) throw new NotFoundError("Item Not Found");
-    return prisma.cartItem.update({
+    await prisma.cartItem.update({
         where:{
             id:item.id
         },

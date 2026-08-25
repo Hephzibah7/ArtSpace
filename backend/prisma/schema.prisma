@@ -83,7 +83,7 @@ enum PaymentStatus {
 model CartItem {
   id        String   @id @default(uuid())
   cartId    String
-  productId String
+  productId String @unique
   quantity  Int
 
   cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
